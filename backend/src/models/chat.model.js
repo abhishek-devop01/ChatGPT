@@ -10,12 +10,16 @@ const chatSchema = new mongoose.Schema({
      title:{
           type: String,
           required: true
+     },
+     lastActivity: {
+          type: Date,
+          default: Date.now
      }
 },{
-     timestamps
+     timestamps: true
 })
 
-const chatModel = mongoose.model("chats", chatSchema)
+const chatModel = mongoose.model("chat", chatSchema)
 
 
 module.exports = chatModel
