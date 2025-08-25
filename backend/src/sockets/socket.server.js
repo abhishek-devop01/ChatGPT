@@ -37,6 +37,9 @@ function initSocketServer(httpServer) {
       //   content: message text content
       // }
 
+
+
+
       console.log(messagePayload);
 
       await messageModel.create({
@@ -45,6 +48,12 @@ function initSocketServer(httpServer) {
         content: messagePayload.content,
         role: "user"
       })
+
+      const chatHistory = await messageModel.find({
+        chat: messagePayload.chat
+      })
+      console.log(chatHistory);
+      
       const response = await aiService.generateResponse(messagePayload.content)
 
 
