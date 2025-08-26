@@ -48,7 +48,14 @@ function initSocketServer(httpServer) {
 
       const vectors = await aiService.generateVector(messagePayload.content)
 
-      console.log(vectors);
+      await createMemory({
+        vectors,
+        messageId:"24857394",
+        metadata: {
+          chat: messagePayload.chat,
+          user: socket.user._id
+        }
+      })
       
 
       

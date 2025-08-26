@@ -21,7 +21,7 @@ async function generateVector(content){
           }
      })
 
-     return response.embeddings
+     return response.embeddings[0].values
 }
 
 module.exports = {
