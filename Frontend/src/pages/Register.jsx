@@ -18,7 +18,7 @@ const Register = () => {
         setSubmitting(true);
         console.log(form);
 
-        // axios.post("https://cohort-1-project-chat-gpt.onrender.com/api/auth/register", {
+        axios.post("https://chatgpt-m95i.onrender.com/api/auth/register", {
             email: form.email,
             fullName: {
                 firstName: form.firstname,
@@ -34,6 +34,7 @@ const Register = () => {
             console.error(err);
             alert('Registration failed (placeholder)');
         })
+
         try {
             // Placeholder: integrate real registration logic / API call.
         } catch (err) {
