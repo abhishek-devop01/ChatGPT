@@ -1,4 +1,5 @@
 @import url('./styles/theme.css');
+@import "tailwindcss";
 
 * {
   box-sizing: border-box;
@@ -21,11 +22,12 @@ body {
 }
 
 a {
-  color: var(--color-primary);
+  color: rgba(39, 132, 240, 0.692);
   text-decoration: none;
 }
 
 a:hover {
+  font-weight: 200;
   text-decoration: underline;
 }
 

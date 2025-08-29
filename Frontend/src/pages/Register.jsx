@@ -29,10 +29,10 @@ const Register = () => {
             withCredentials: true
         }).then((res) => {
             console.log(res);
-            navigate("/");
+            navigate("/home");
         }).catch((err) => {
             console.error(err);
-            alert('Registration failed (placeholder)');
+            alert('something went wrong');
         })
 
         try {

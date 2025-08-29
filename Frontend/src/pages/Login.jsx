@@ -30,7 +30,7 @@ const Login = () => {
             }
         ).then((res) => {
             console.log(res);
-            navigate("/");
+            navigate("/home");
         }).catch((err) => {
             console.error(err);
         }).finally(() => {
