@@ -1,36 +1,92 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Start = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
-      <nav className="container mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 py-6">
-        
-        <div className="flex items-center justify-center">
-          <Link
-          className="text-2xl  sm:text-3xl lg:text-4xl font-semibold"
-          to="/"
-        >
-          GPT
-        </Link>
-          <div className="ml-6">
-            <video className="w-[53vw] h-9 ml-4 rounded-full object-cover" autoPlay muted loop 
-            src="https://www.pexels.com/download/video/18069233/"></video>
+      <header className="w-full mt-5">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-20">
+        <div className="flex h-16 items-center justify-between">
+          {/* Brand + (desktop) video */}
+          <div className="flex items-center gap-3">
+            <Link to="/" className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+              GPT
+            </Link>
+
+            {/* Hide video on small screens */}
+            <div className=" md:block">
+              <video
+                className="w-[68vw] md:w-[65vw] lg:w-[60vw] h-9 rounded-full object-cover"
+                autoPlay
+                muted
+                loop
+                // Use a direct .mp4 URL; many sites block hotlinking of "download" pages
+                src="https://www.pexels.com/download/video/18069233/"
+              />
+            </div>
           </div>
+
+          {/* Desktop actions */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Link
+              to="/login"
+              className="rounded-full border border-gray-400 px-5 py-2 text-sm sm:text-base hover:bg-gray-400/20"
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/register"
+              className="rounded-full border border-gray-400 px-5 py-2 text-sm sm:text-base hover:bg-gray-400/20"
+            >
+              Sign Up
+            </Link>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            className="sm:hidden inline-flex items-center justify-center rounded-md p-2 ring-1 ring-gray-500/30"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {/* hamburger / close icons */}
+            <svg className={`h-5 w-5 ${open ? "hidden" : "block"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeWidth="2" strokeLinecap="round" d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+            <svg className={`h-5 w-5 ${open ? "block" : "hidden"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeWidth="2" strokeLinecap="round" d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
         </div>
-        
-        
-        <div className="flex sm:gap-4">
-          <Link className="hover:bg-gray-400 border border-gray-400 rounded-full py-1 px-8" to="/login">
-            Sign In
-          </Link>
-          
-          <Link className="hover:bg-gray-400 border border-gray-400 rounded-full py-1 px-8" to="/register">
-            Sign Up
-          </Link>
-        </div>
+
+        {/* Mobile panel */}
+        {open && (
+          <div className="sm:hidden pb-4">
+            <div className="mt-2 flex flex-col gap-2">
+              <Link
+                to="/login"
+                className="rounded-full border border-gray-400 px-4 py-2 text-base hover:bg-gray-400/20"
+                onClick={() => setOpen(false)}
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/register"
+                className="rounded-full border border-gray-400 px-4 py-2 text-base hover:bg-gray-400/20"
+                onClick={() => setOpen(false)}
+              >
+                Sign Up
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
+    </header>
+
 
       {/* Floating Images Section */}
       <div className="relative flex justify-center items-center mt-10">
