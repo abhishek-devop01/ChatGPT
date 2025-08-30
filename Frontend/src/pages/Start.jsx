@@ -6,18 +6,27 @@ const Start = () => {
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
       <nav className="container mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 py-6">
-        <Link
-          className="text-2xl sm:text-3xl lg:text-4xl font-semibold"
-          to="/home"
+        
+        <div className="flex items-center justify-center">
+          <Link
+          className="text-2xl  sm:text-3xl lg:text-4xl font-semibold"
+          to="/"
         >
           GPT
         </Link>
-        <div className="flex gap-4 sm:gap-6 text-black">
-          <Link className="hover:underline" to="/login">
+          <div className="ml-6">
+            <video className="w-[53vw] h-9 ml-4 rounded-full object-cover" autoPlay muted loop 
+            src="https://www.pexels.com/download/video/18069233/"></video>
+          </div>
+        </div>
+        
+        
+        <div className="flex sm:gap-4">
+          <Link className="hover:bg-gray-400 border border-gray-400 rounded-full py-1 px-8" to="/login">
             Sign In
           </Link>
-          /
-          <Link className="hover:underline" to="/register">
+          
+          <Link className="hover:bg-gray-400 border border-gray-400 rounded-full py-1 px-8" to="/register">
             Sign Up
           </Link>
         </div>
@@ -36,7 +45,7 @@ const Start = () => {
           alt=""
         />
         <img
-          className="h-18 w-24 sm:h-32 sm:w-32 object-cover rounded-2xl absolute top-48 left-4 sm:left-40"
+          className="h-18 w-20 sm:h-32 sm:w-32 object-cover rounded-2xl absolute top-58 left-4 sm:left-40"
           src="https://images.unsplash.com/photo-1755354567507-10dae25beb9a?q=80&w=1374&auto=format&fit=crop"
           alt=""
         />
@@ -57,9 +66,10 @@ const Start = () => {
       {/* Description */}
       <div className="flex mt-6 items-center justify-center px-6">
         <p className="max-w-2xl text-center text-gray-500 text-sm sm:text-base md:text-md">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-          eius minus reprehenderit Lorem ipsum dolor sit amet. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Accusamus, rerum?
+          An intelligent AI chat companion that understands context, generates
+          human-like responses, and simplifies tasks—designed for smarter
+          conversations, learning, and productivity. Experience seamless
+          interaction where technology meets everyday assistance
         </p>
       </div>
 
@@ -75,8 +85,9 @@ const Start = () => {
           bg-white text-black flex items-center shadow-md hover:shadow-lg transition"
         >
           Get started
-          <div className="ml-6">
-            <video className="w-16 h-8 bg-red-300 rounded-full" src=""></video>
+          <div className="pl-6">
+            <video className="w-20 h-8 rounded-full object-cover" autoPlay muted loop
+             src="https://www.pexels.com/download/video/18068664/"></video>
           </div>
         </button>
       </div>
@@ -85,8 +96,8 @@ const Start = () => {
       <div className="relative h-32 flex ml-10 items-center mt-16">
         <div className="w-[40%] sm:w-[30%] lg:w-[15%] ">
           <p className="text-xs sm:text-sm text-white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            est sint mollitia
+            Your personal AI assistant built to chat, create, and solve. From
+            everyday questions to complex tasks, experience natural
           </p>
         </div>
       </div>

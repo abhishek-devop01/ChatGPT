@@ -26,10 +26,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  font-weight: 200;
-  text-decoration: underline;
-}
+
 
 /* Layout helpers */
 .center-min-h-screen {
