@@ -24,7 +24,7 @@ const Start = () => {
                 muted
                 loop
                 // Use a direct .mp4 URL; many sites block hotlinking of "download" pages
-                src="https://www.pexels.com/download/video/18069233/"
+                src="https://player.vimeo.com/progressive_redirect/playback/1081760237/rendition/1080p/file.mp4?loc=external&log_user=0&signature=741bda2d968294df1e81eb1c5a920f1df0d2562573fde7bd94a28cf97ef1177e"
               />
             </div>
           </div>
@@ -142,15 +142,16 @@ const Start = () => {
         >
           Get started
           <div className="pl-6">
-            <video className="w-20 h-8 rounded-full object-cover" autoPlay muted loop
-             src="https://www.pexels.com/download/video/18068664/"></video>
+            
+            <video className="w-20 h-9 rounded-full object-cover" autoPlay muted loop
+             src="https://pub-8ca9b5847fbb4d4fb97b3497fb9521d5.r2.dev/hero_optim.mp4"></video>
           </div>
         </button>
       </div>
 
       {/* Bottom Text */}
       <div className="relative h-32 flex ml-10 items-center mt-16">
-        <div className="w-[40%] sm:w-[30%] lg:w-[15%] ">
+        <div className="w-[44%] sm:w-[34%] lg:w-[21%] ">
           <p className="text-xs sm:text-sm text-white">
             Your personal AI assistant built to chat, create, and solve. From
             everyday questions to complex tasks, experience natural
