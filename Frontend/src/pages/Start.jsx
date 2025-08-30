@@ -1,16 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Start = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
       <nav className="container mx-auto flex items-center justify-between px-6 sm:px-10 lg:px-20 py-6">
-        <Link className="text-2xl sm:text-3xl lg:text-4xl font-semibold" to="/home">
+        <Link
+          className="text-2xl sm:text-3xl lg:text-4xl font-semibold"
+          to="/home"
+        >
           GPT
         </Link>
-        <div className="flex gap-4 sm:gap-6">
-          <Link className="hover:underline" to="/login">Sign In</Link>
-          <Link className="hover:underline" to="/register">Sign Up</Link>
+        <div className="flex gap-4 sm:gap-6 text-black">
+          <Link className="hover:underline" to="/login">
+            Sign In
+          </Link>
+          /
+          <Link className="hover:underline" to="/register">
+            Sign Up
+          </Link>
         </div>
       </nav>
 
@@ -40,7 +49,9 @@ const Start = () => {
 
       {/* Hero Title */}
       <div className="text-center mt-16">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">GPT-Clone</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+          GPT-Clone
+        </h1>
       </div>
 
       {/* Description */}
@@ -53,15 +64,19 @@ const Start = () => {
       </div>
 
       {/* Get Started Button */}
-      <div className="mt-18 flex justify-center">
-        <button className="border px-6 py-2 rounded-full text-md cursor-pointer
-          bg-white text-black flex items-center shadow-md hover:shadow-lg transition">
+      <div
+        className="mt-18 flex justify-center"
+        onClick={() => {
+          navigate("/login");
+        }}
+      >
+        <button
+          className="border px-6 py-2 rounded-full text-md cursor-pointer
+          bg-white text-black flex items-center shadow-md hover:shadow-lg transition"
+        >
           Get started
           <div className="ml-6">
-            <video
-              className="w-16 h-8 bg-red-300 rounded-full"
-              src=""
-            ></video>
+            <video className="w-16 h-8 bg-red-300 rounded-full" src=""></video>
           </div>
         </button>
       </div>
