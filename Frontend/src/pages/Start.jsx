@@ -1,25 +1,29 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ThemeToggle from "../components/ThemeToggle"
 
 const Start = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex  flex-col ">
       {/* Navbar */}
       <header className="w-full mt-5">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-20">
-        <div className="flex h-16 items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-3">
           {/* Brand + (desktop) video */}
-          <div className="flex items-center gap-3">
-            <Link to="/" className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
+          <div className="flex items-center gap-4">
+            <Link to="/" className="logo text-2x sm:text-3xl lg:text-5xl font-semibold">
               GPT
             </Link>
+            {/* <div>
+              <ThemeToggle />
+            </div> */}
 
             {/* Hide video on small screens */}
             <div className=" md:block">
               <video
-                className="w-[68vw] md:w-[65vw] lg:w-[60vw] h-9 rounded-full object-cover"
+                className="w-[80vw] md:w-[65vw] lg:w-[80vw] h-9 rounded-full object-cover"
                 autoPlay
                 muted
                 loop
@@ -33,13 +37,13 @@ const Start = () => {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               to="/login"
-              className="rounded-full border border-gray-400 px-5 py-2 text-sm sm:text-base hover:bg-gray-400/20"
+              className="nav-button rounded-full border border-gray-400 sm:w-[16vw]  md:w-[9vw]  text-center px-3  py-2 text-sm sm:text-base hover:bg-gray-400/20"
             >
               Sign In
             </Link>
             <Link
               to="/register"
-              className="rounded-full border border-gray-400 px-5 py-2 text-sm sm:text-base hover:bg-gray-400/20"
+              className="nav-button rounded-full border border-gray-400 sm:w-[16vw]  md:w-[9vw] px-3 py-2 text-sm sm:text-base text-center hover:bg-gray-400/20"
             >
               Sign Up
             </Link>
@@ -106,7 +110,7 @@ const Start = () => {
           alt=""
         />
         <img
-          className="h-32 w-32 sm:h-48 sm:w-48 object-cover rounded-2xl absolute top-95 right-10 sm:right-40"
+          className="h-32 w-32 sm:h-48 sm:w-48 object-cover rounded-2xl absolute top-82 right-10 sm:right-40"
           src="https://images.unsplash.com/photo-1623418371013-4baaf507be2b?q=80&w=435&auto=format&fit=crop"
           alt=""
         />
@@ -114,7 +118,7 @@ const Start = () => {
 
       {/* Hero Title */}
       <div className="text-center mt-16">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+        <h1 className="text-4xl sm:text-5xl  md:text-6xl lg:text-7xl font-bold">
           GPT-Clone
         </h1>
       </div>
