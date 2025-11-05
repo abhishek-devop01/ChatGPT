@@ -55,7 +55,7 @@ const Login = () => {
                         <label htmlFor="login-password">Password</label>
                         <input id="login-password" name="password" type="password" autoComplete="current-password" placeholder="Your password"  onChange={handleChange} required />
                     </div>
-                    <button type="submit" className="primary-btn" disabled={submitting}>
+                    <button type="submit" className="primary-btn text-white" disabled={submitting}>
                         {submitting ? 'Signing in...' : 'Sign in'}
                     </button>
                 </form>
